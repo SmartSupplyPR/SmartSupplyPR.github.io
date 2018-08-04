@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  
+    <h1>loading......</h1>
   
 
 <script>
@@ -30,6 +30,8 @@ var promiseID = getParameterByName('promiseID');
   
   if(promiseID > 1){
     
+      alert('sending water request');
+      
   var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
         xmlhttp.open("POST", "http://50.23.39.105:31090/api/deliverPromise");
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
