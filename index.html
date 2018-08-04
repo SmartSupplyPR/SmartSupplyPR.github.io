@@ -1,1 +1,51 @@
-Hi mom
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+  
+  
+
+<script>
+  
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+Usage:
+
+// query string: ?foo=lorem&bar=&baz 
+var promiseID = getParameterByName('promiseID');  
+  
+  if(promiseID > 1){
+    
+  var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+        xmlhttp.open("POST", "http://50.23.39.105:31090/api/deliverPromise");
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send(JSON.stringify({
+          $class: "org.smartsupply.inventory.deliverPromise", 
+          promise: "resource:org.smartsupply.inventory.Promise#" + promise, 
+          dateDelivered: new Date().toLocaleDateString() 
+        }));
+  
+    
+  }
+  
+  
+  
+</script>
+  
+</body>
+</html>
+
